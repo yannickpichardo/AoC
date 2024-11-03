@@ -3,3 +3,4 @@ This is where I store all my Advent of Code programming projects which are relea
 My aim is to tryout different programming languages to tackle these problems each year.
 
 2024 -> Goal is to do these in Rust
+2023 -> Goal is to lean Go or Rust
