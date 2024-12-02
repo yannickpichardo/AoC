@@ -9,6 +9,7 @@ def get_distance_sum(x: np.ndarray, y: np.ndarray):
 def get_similarity_score(x: np.ndarray, y: np.ndarray):
     # Create set of occurrences of y
     unique_counts = np.unique(y, return_counts=True)
+    # Create dictionary for easy indexing
     y_counts = dict(zip(*unique_counts))
     score = sum(value * y_counts.get(value, 0) for value in x)
     return score
