@@ -1,10 +1,6 @@
 import numpy as np
 
 
-def count_safe():
-    pass
-
-
 def get_safety_level(x: np.ndarray):
     x_diff = np.diff(x)
     # Check if increasing/decreasing
@@ -16,6 +12,16 @@ def get_safety_level(x: np.ndarray):
     return True
 
 
+def get_safety_level_dampened(x: np.ndarray):
+    if get_safety_level(x):
+        return True
+    for i in range(len(x)):
+        x_dampened = np.delete(x, i)
+        if get_safety_level(x_dampened):
+            return True
+    return False
+
+
 if __name__ == "__main__":
     file_path = r"day02input.txt"
     data = []
@@ -25,3 +31,5 @@ if __name__ == "__main__":
             data.append(np.array([float(value) for value in line.split()]))
     safety_levels = [get_safety_level(row) for row in data]
     print(sum(safety_levels))
+    safety_levels_dampened = [get_safety_level_dampened(row) for row in data]
+    print(sum(safety_levels_dampened))
