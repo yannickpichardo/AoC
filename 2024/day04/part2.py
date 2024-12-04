@@ -29,4 +29,4 @@ if __name__ == "__main__":
     puzzle_str = open("day04input.txt").read()
     puzzle_grid = [list(line.strip()) for line in puzzle_str.strip().split("\n")]
     count = get_x_mas(puzzle_grid)
-    print(f"The X-MAS pattern occurs {count} times in the grid.")
+    print(f"The X-MAS occurs {count} times")
