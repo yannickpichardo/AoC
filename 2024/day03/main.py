@@ -9,8 +9,8 @@ def parse_memory(input: str):
     return parsed_numbers
 
 
-def multiply(parsed_tuples):
-    return [a * b for a, b in parsed_tuples]
+def get_multiply_sum(parsed_tuples):
+    return sum([a * b for a, b in parsed_tuples])
 
 
 ### Part 2
@@ -38,8 +38,8 @@ if __name__ == "__main__":
         input = file.read()
     # Part 1
     parsed_numbers = parse_memory(input=input)
-    result = multiply(parsed_numbers)
-    print(sum(result))
+    part1_result = get_multiply_sum(parsed_numbers)
+    print(part1_result)
     # Part 2
-    parsed_numbers_ext = parse_memory_extended(input)
-    print(parsed_numbers_ext)
+    part2_results = parse_memory_extended(input)
+    print(part2_results)
